@@ -4,3 +4,4 @@ venv/
 __pycache__/
 *.pyc
 *.apk
+manual_backups/

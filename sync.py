@@ -34,31 +34,42 @@ class DatabaseSyncApp:
         self.create_ui()
 
     def create_ui(self):
-        frame = tk.Frame(self.root, padx=10, pady=10)
-        frame.pack()
+        frame = tk.Frame(self.root, padx=40, pady=40)
+        frame.pack(expand=True)
 
-        tk.Label(frame, text="Polling Interval (seconds):").grid(row=0, column=0, sticky=tk.W, pady=5)
-        self.poll_entry = tk.Entry(frame, width=10)
+        button_width = 60
+        button_height = 2
+        entry_width = 40
+        
+        # Increased font size to 16
+        tk.Label(frame, text="Polling Interval (seconds):", font=('Arial', 16)).grid(row=0, column=0, sticky=tk.W, pady=20)
+        self.poll_entry = tk.Entry(frame, width=entry_width, font=('Arial', 16))
         self.poll_entry.insert(0, str(self.poll_interval))
-        self.poll_entry.grid(row=0, column=1, pady=5)
+        self.poll_entry.grid(row=0, column=1, pady=20)
 
-        self.poll_button = tk.Button(frame, text="Start Polling", command=self.toggle_polling, width=15)
-        self.poll_button.grid(row=1, column=0, pady=5)
+        self.poll_button = tk.Button(frame, text="Start Polling", command=self.toggle_polling, 
+                                    width=button_width, height=button_height, font=('Arial', 16))
+        self.poll_button.grid(row=1, column=0, pady=20)
 
-        self.pull_button = tk.Button(frame, text="Pull Database", command=self.pull_database, width=15)
-        self.pull_button.grid(row=1, column=1, pady=5)
+        # Update all other buttons with larger font
+        self.pull_button = tk.Button(frame, text="Pull Database", command=self.pull_database, 
+                                    width=button_width, height=button_height, font=('Arial', 16))
+        self.pull_button.grid(row=1, column=1, pady=20)
 
-        self.push_button = tk.Button(frame, text="Push Database", command=self.push_database, width=15)
-        self.push_button.grid(row=2, column=0, pady=5)
+        self.push_button = tk.Button(frame, text="Push Database", command=self.push_database, 
+                                    width=button_width, height=button_height, font=('Arial', 16))
+        self.push_button.grid(row=2, column=0, pady=20)
 
-        self.backup_button = tk.Button(frame, text="Create Backup", command=self.create_backup, width=15)
-        self.backup_button.grid(row=2, column=1, pady=5)
+        self.backup_button = tk.Button(frame, text="Create Backup", command=self.create_backup, 
+                                    width=button_width, height=button_height, font=('Arial', 16))
+        self.backup_button.grid(row=2, column=1, pady=20)
 
-        self.sync_button = tk.Button(frame, text="Sync to PostgreSQL", command=self.sync_to_postgresql, width=20)
-        self.sync_button.grid(row=3, column=0, pady=5)
+        self.sync_button = tk.Button(frame, text="Sync to PostgreSQL", command=self.sync_to_postgresql, 
+                                    width=button_width, height=button_height, font=('Arial', 16))
+        self.sync_button.grid(row=3, column=0, pady=20)
 
-        self.status_label = tk.Label(frame, text="Status: Idle", fg="blue")
-        self.status_label.grid(row=4, column=0, columnspan=2, pady=5)
+        self.status_label = tk.Label(frame, text="Status: Idle", fg="blue", font=('Arial', 16))
+        self.status_label.grid(row=4, column=0, columnspan=2, pady=20)
 
     def toggle_polling(self):
         if self.polling_enabled:
