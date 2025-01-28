@@ -362,8 +362,6 @@ def export_to_local_db():
         if 'local_conn' in locals():
             local_conn.close()
 
-
-
 def main_menu():
     while True:
         print("\nBCA Track Database Manager")
@@ -396,7 +394,6 @@ def main_menu():
             break
         else:
             print("Invalid choice. Please try again.")
-
 
 if __name__ == "__main__":
     main_menu()

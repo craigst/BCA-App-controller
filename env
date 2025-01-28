@@ -1,0 +1,13 @@
+# API Keys
+CAR_API_KEY=de90519a90c956b2abc4d9ed7f00eb88
+
+# Database Paths
+TEMP_DB_PATH=./temp.db
+LOCAL_DB_PATH=./localsql.db
+SOURCE_DB_PATH=/data/data/com.bca.bcatrack/cache/cache/data/sql.db
+PG_HOST=192.168.1.96
+PG_PORT=5433
+PG_DATABASE=postgres
+PG_USERNAME=postgres
+PG_PASSWORD=Wsxdcft2
+POLL_INTERVAL=60
