@@ -4,4 +4,10 @@ venv/
 __pycache__/
 *.pyc
 *.apk
-manual_backups/
+*.ini
+*.xlsx
+loadsheets/
+backups/
+timesheets/
+.vscode/
+*.log
